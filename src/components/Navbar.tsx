@@ -24,7 +24,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <Link href="/jobs" className="text-sm font-medium hover:text-purple-400 transition-colors">Find Jobs</Link>
           <Link href="/analyzer" className="text-sm font-medium hover:text-purple-400 transition-colors">Resume AI</Link>
-          <Link href="/chat" className="text-sm font-medium hover:text-purple-400 transition-colors">AI Mentor</Link>
+          <Link href="/guide" className="text-sm font-medium hover:text-purple-400 transition-colors">Guide</Link>
           {session ? (
             <div className="flex items-center gap-4 border-l border-white/10 pl-8">
               <Link href="/dashboard" className="flex items-center gap-2 hover:text-purple-400 transition-colors">

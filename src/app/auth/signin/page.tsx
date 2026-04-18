@@ -26,7 +26,10 @@ export default function SignIn() {
               <Bot className="w-10 h-10 text-white" />
             </div>
             <h1 className="text-3xl font-bold tracking-tight mb-2">Welcome Back</h1>
-            <p className="text-gray-400">Sign in to your AI career assistant</p>
+            <div className="flex flex-col items-center gap-1">
+              <p className="text-gray-400">Sign in to your AI career assistant</p>
+              <Link href="/guide" className="text-xs text-purple-400 hover:text-purple-300 transition-colors">New user? Read the Guide</Link>
+            </div>
           </div>
 
           <div className="space-y-4">

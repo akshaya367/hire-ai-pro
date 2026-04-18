@@ -32,6 +32,7 @@ export default function Footer() {
           <div>
             <h4 className="font-bold mb-6">Platform</h4>
             <ul className="space-y-4 text-sm text-gray-400">
+              <li><Link href="/guide" className="hover:text-purple-400 transition-colors">User Guide</Link></li>
               <li><Link href="/jobs" className="hover:text-purple-400 transition-colors">Job Search</Link></li>
               <li><Link href="/analyzer" className="hover:text-purple-400 transition-colors">Resume Analyzer</Link></li>
               <li><Link href="/chat" className="hover:text-purple-400 transition-colors">AI Career Mentor</Link></li>
