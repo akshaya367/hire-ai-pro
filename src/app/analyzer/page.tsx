@@ -60,25 +60,31 @@ export default function AnalyzerPage() {
 
         {!analysis && (
           <motion.div 
-            {...getRootProps()}
-            className={`glass-card p-16 border-2 border-dashed transition-all cursor-pointer text-center
-              ${isDragActive ? 'border-purple-500 bg-purple-500/10' : 'border-white/10 hover:border-purple-500/50'}`}
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="w-full"
           >
-            <input {...getInputProps()} />
-            {isAnalyzing ? (
-              <div className="flex flex-col items-center gap-4">
-                <Loader2 className="w-12 h-12 text-purple-500 animate-spin" />
-                <p className="text-lg font-medium">Analyzing your potential...</p>
-              </div>
-            ) : (
-              <div className="flex flex-col items-center gap-4">
-                <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-2">
-                  <Upload className="w-8 h-8 text-purple-400" />
+            <div
+              {...getRootProps()}
+              className={`glass-card p-16 border-2 border-dashed transition-all cursor-pointer text-center
+                ${isDragActive ? 'border-purple-500 bg-purple-500/10' : 'border-white/10 hover:border-purple-500/50'}`}
+            >
+              <input {...getInputProps()} />
+              {isAnalyzing ? (
+                <div className="flex flex-col items-center gap-4">
+                  <Loader2 className="w-12 h-12 text-purple-500 animate-spin" />
+                  <p className="text-lg font-medium">Analyzing your potential...</p>
                 </div>
-                <p className="text-xl font-bold">Drag & drop your PDF resume</p>
-                <p className="text-gray-500">or click to browse files</p>
-              </div>
-            )}
+              ) : (
+                <div className="flex flex-col items-center gap-4">
+                  <div className="w-16 h-16 rounded-2xl bg-white/5 flex items-center justify-center mb-2">
+                    <Upload className="w-8 h-8 text-purple-400" />
+                  </div>
+                  <p className="text-xl font-bold">Drag & drop your PDF resume</p>
+                  <p className="text-gray-500">or click to browse files</p>
+                </div>
+              )}
+            </div>
           </motion.div>
         )}
 

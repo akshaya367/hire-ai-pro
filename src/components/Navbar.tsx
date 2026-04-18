@@ -41,7 +41,7 @@ export default function Navbar() {
             </div>
           ) : (
             <Link 
-              href="/api/auth/signin"
+              href="/auth/signin"
               className="px-5 py-2 rounded-xl bg-white text-black text-sm font-semibold hover:bg-purple-50 transition-colors"
             >
               Get Started

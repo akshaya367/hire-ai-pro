@@ -1,20 +1,15 @@
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
+import HowItWorks from "@/components/HowItWorks";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen">
+    <main className="min-h-screen bg-[#030014] text-white overflow-hidden">
       <Navbar />
       <Hero />
-      
-      {/* Footer Section */}
-      <footer className="py-12 border-t border-white/5 bg-black/50 backdrop-blur-sm">
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <p className="text-gray-500 text-sm">
-            © 2026 HireAI. Powered by Grok AI. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+      <HowItWorks />
+      <Footer />
+    </main>
   );
 }

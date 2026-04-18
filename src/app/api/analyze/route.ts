@@ -1,12 +1,13 @@
 import { NextResponse } from 'next/server';
 import axios from 'axios';
-import pdf from 'pdf-parse';
 
 import { getServerSession } from "next-auth/next";
-import { authOptions } from "../auth/[...nextauth]/route";
+import { authOptions } from "@/lib/auth";
 
 export async function POST(req: Request) {
   try {
+    // @ts-ignore
+    const pdf = require('pdf-parse');
     const session = await getServerSession(authOptions);
     if (!session) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
