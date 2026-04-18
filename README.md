@@ -1,63 +1,41 @@
-# HireAI - Premium AI-Powered Job Platform
+# HireAI Pro - Premium AI SaaS Platform
 
-HireAI is a production-ready web application designed to revolutionize the job search experience in India using cutting-edge AI.
+HireAI Pro is a next-generation career and support platform powered by advanced AI. It combines job searching, resume analysis, and real-time support (Chat & Voice) into one seamless, high-performance web experience.
 
-## 🚀 Features
-- **AI Job Search**: Discover roles, salary ranges, and hiring companies based on your skills.
-- **Resume Analyzer**: Get an instant ATS score and actionable improvements for your PDF resume.
-- **Smart Dashboard**: Track applications and visualize your growth with interactive charts.
-- **AI Career Mentor**: Chat with an expert AI coach for interview prep and career guidance.
-- **Secure Auth**: Seamless Google and GitHub authentication.
+## 🚀 Key Features
+- **AI Job Search**: Highly personalized role matching for the Indian market.
+- **Resume Analyzer**: PDF analysis with ATS scoring and skill improvement suggestions.
+- **AI Support Chat**: Context-aware chatbot for platform guidance and troubleshooting.
+- **AI Voice Calling**: Instant outbound support calls via Twilio & ElevenLabs.
+- **Personalized Dashboard**: Track applications, saved jobs, and career metrics.
 
 ## 🛠 Tech Stack
-- **Frontend**: Next.js 14/15, Tailwind CSS 4, Framer Motion
-- **Backend**: Next.js API Routes
-- **Database**: Supabase (PostgreSQL)
-- **Auth**: NextAuth.js
-- **AI**: Grok (X.AI) integration
+- **Frontend**: Next.js 14, TypeScript, Tailwind CSS, Framer Motion
+- **Backend**: Next.js API Routes, MongoDB (Mongoose)
+- **Auth**: NextAuth.js (Google & GitHub)
+- **AI**: Grok-beta (supports OpenAI spec), Twilio, ElevenLabs
 
 ## 📦 Setup Instructions
 
-1. **Clone and Install**:
-   ```bash
-   npm install
-   ```
+### 1. Prerequisites
+- Node.js (v18+)
+- MongoDB Atlas account
+- Twilio account (Account SID, Auth Token, Twilio Number)
+- OpenAI or Grok API Key
 
-2. **Environment Variables**:
-   Create a `.env.local` file and add the following:
-   ```env
-   NEXT_PUBLIC_SUPABASE_URL=your_url
-   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_key
-   SUPABASE_SERVICE_ROLE_KEY=your_role_key
-   NEXTAUTH_URL=http://localhost:3000
-   NEXTAUTH_SECRET=your_secret
-   GOOGLE_CLIENT_ID=your_id
-   GOOGLE_CLIENT_SECRET=your_secret
-   GITHUB_ID=your_id
-   GITHUB_SECRET=your_secret
-   AI_API_KEY=your_grok_key
-   AI_API_BASE_URL=https://api.x.ai/v1
-   AI_MODEL=grok-beta
-   ```
+### 2. Environment Setup
+Copy the `.env.example` to `.env.local` and fill in your credentials.
 
-3. **Run Development Server**:
-   ```bash
-   npm run dev
-   ```
+### 3. Installation
+```bash
+npm install
+npm run dev
+```
 
-4. **Production Build**:
-   ```bash
-   npm run build
-   npm start
-   ```
+### 4. Twilio/Voice Configuration
+- Ensure your Twilio number is active.
+- Set `NEXT_PUBLIC_APP_URL` in `.env.local` to your public URL (or ngrok during local dev).
+- Point Twilio Voice Webhook to `${NEXT_PUBLIC_APP_URL}/api/voice/webhook`.
 
-## 🔒 Security
-- Protected routes using NextAuth middleware.
-- Sanitized input and structured AI prompting.
-- Environment variables for all sensitive keys.
-
-## 🌩 Deployment
-This app is optimized for **Vercel**.
-- Connect your GitHub repo to Vercel.
-- Add your environment variables in the Vercel dashboard.
-- Deployment is automatic on push.
+## 🌐 Deployment
+The platform is optimized for Vercel. Ensure all environment variables are added to your Vercel project settings.

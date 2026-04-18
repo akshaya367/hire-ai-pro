@@ -24,6 +24,7 @@ export default function Navbar() {
         <div className="hidden md:flex items-center gap-8">
           <Link href="/jobs" className="text-sm font-medium hover:text-purple-400 transition-colors">Find Jobs</Link>
           <Link href="/analyzer" className="text-sm font-medium hover:text-purple-400 transition-colors">Resume AI</Link>
+          <Link href="/support" className="text-sm font-medium hover:text-purple-400 transition-colors">Support</Link>
           <Link href="/guide" className="text-sm font-medium hover:text-purple-400 transition-colors">Guide</Link>
           {session ? (
             <div className="flex items-center gap-4 border-l border-white/10 pl-8">
@@ -64,11 +65,12 @@ export default function Navbar() {
         >
           <Link href="/jobs" onClick={() => setIsOpen(false)}>Find Jobs</Link>
           <Link href="/analyzer" onClick={() => setIsOpen(false)}>Resume AI</Link>
+          <Link href="/support" onClick={() => setIsOpen(false)}>Support</Link>
           <Link href="/chat" onClick={() => setIsOpen(false)}>AI Mentor</Link>
           {session ? (
             <Link href="/dashboard" onClick={() => setIsOpen(false)}>Dashboard</Link>
           ) : (
-            <Link href="/api/auth/signin" onClick={() => setIsOpen(false)}>Sign In</Link>
+            <Link href="/auth/signin" onClick={() => setIsOpen(false)}>Sign In</Link>
           )}
         </motion.div>
       )}

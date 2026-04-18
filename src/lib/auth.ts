@@ -1,6 +1,8 @@
 import GoogleProvider from "next-auth/providers/google";
 import GithubProvider from "next-auth/providers/github";
 import { AuthOptions } from "next-auth";
+import connectToDatabase from "./mongodb";
+import User from "@/models/User";
 
 export const authOptions: AuthOptions = {
   providers: [
@@ -20,6 +22,22 @@ export const authOptions: AuthOptions = {
     strategy: "jwt",
   },
   callbacks: {
+    async signIn({ user, account, profile }) {
+      if (account?.provider === "google" || account?.provider === "github") {
+        await connectToDatabase();
+        const existingUser = await User.findOne({ email: user.email });
+        
+        if (!existingUser) {
+          await User.create({
+            name: user.name,
+            email: user.email,
+            image: user.image,
+            savedJobs: [],
+          });
+        }
+      }
+      return true;
+    },
     async jwt({ token, user }) {
       if (user) {
         token.id = user.id;
