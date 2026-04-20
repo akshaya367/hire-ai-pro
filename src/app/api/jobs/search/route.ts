@@ -6,10 +6,9 @@ import { authOptions } from "@/lib/auth";
 
 export async function POST(req: Request) {
   try {
+    // Optional session check: Allow guest access for internship report demo
     const session = await getServerSession(authOptions);
-    if (!session) {
-      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    }
+    const isGuest = !session;
 
     const { skills } = await req.json();
 
@@ -17,7 +16,7 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Skills are required' }, { status: 400 });
     }
 
-    const prompt = `Act as an expert career consultant in India. Based on these skills: "${skills}", return a list of EXACTLY 6 diverse and premium job roles. 
+    const prompt = `Act as an expert career consultant in India. Based on these skills: "${skills}", return a list of EXACTLY 6 diverse and premium job roles. ${isGuest ? '(Provide generic high-quality roles as guest)' : ''}
     For each role, provide:
     1. Job Title
     2. Salary Range (in INR Lakhs per annum)
