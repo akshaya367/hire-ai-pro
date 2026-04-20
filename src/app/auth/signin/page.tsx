@@ -77,7 +77,7 @@ export default function SignIn() {
             </div>
 
             <button 
-              onClick={() => signIn("google", { callbackUrl: "/dashboard" })}
+              onClick={() => signIn("google", { callbackUrl: "/dashboard", prompt: "select_account" })}
               className="w-full py-4 rounded-xl bg-white text-black font-bold flex items-center justify-center gap-3 hover:bg-gray-100 transition-all border border-transparent shadow-lg shadow-white/5"
             >
               <svg className="w-5 h-5" viewBox="0 0 24 24">

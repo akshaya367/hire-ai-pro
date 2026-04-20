@@ -17,15 +17,16 @@ export async function POST(req: Request) {
       return NextResponse.json({ error: 'Skills are required' }, { status: 400 });
     }
 
-    const prompt = `Act as an expert career consultant in India. Based on these skills: "${skills}", return a list of 5 premium job roles. 
+    const prompt = `Act as an expert career consultant in India. Based on these skills: "${skills}", return a list of EXACTLY 6 diverse and premium job roles. 
     For each role, provide:
     1. Job Title
     2. Salary Range (in INR Lakhs per annum)
     3. Essential Skills
     4. 3-4 Top Companies hiring for this in India.
     
-    Format the response MUST be a valid JSON array of objects with keys: "title", "salary", "skills" (array), "companies" (array).
-    Do not include any other text.`;
+    Format: The response MUST be a valid JSON array of objects with keys: "title", "salary", "skills" (array), "companies" (array).
+    Ensure the roles cover different seniority levels (Junior, Mid, Senior).
+    Do not include any other text besides the JSON array.`;
 
     const response = await axios.post(
       process.env.AI_API_BASE_URL + '/chat/completions',
