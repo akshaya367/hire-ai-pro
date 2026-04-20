@@ -6,9 +6,8 @@ import { authOptions } from "@/lib/auth";
 
 export async function POST(req: Request) {
   try {
-    // Optional session check: Allow guest access for internship report demo
-    const session = await getServerSession(authOptions);
-    const isGuest = !session;
+    // Session check removed for reliable demo access
+    const isGuest = true;
 
     const { skills } = await req.json();
 
