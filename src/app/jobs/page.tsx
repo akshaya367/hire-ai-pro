@@ -39,7 +39,11 @@ export default function JobsPage() {
         { title: 'Business Intelligence Architect', salary: '20 - 40 LPA', skills: ['PowerBI', 'Tableau', 'Excel'], companies: ['Deloitte', 'PwC', 'KPMG'] },
         { title: 'Full Stack AI Developer', salary: '15 - 35 LPA', skills: ['Next.js', 'Groq', 'Python'], companies: ['Zomato', 'Freshworks', 'Swiggy'] },
         { title: 'Data Scientist', salary: '22 - 45 LPA', skills: ['Python', 'SQL', 'Scikit-Learn'], companies: ['Flipkart', 'DataBricks', 'Snapdeal'] },
-        { title: 'Cloud Data Engineer', salary: '20 - 45 LPA', skills: ['AWS', 'Python', 'SQL'], companies: ['TCS', 'Wipro', 'HCL Tech'] }
+        { title: 'Cloud Data Engineer', salary: '20 - 45 LPA', skills: ['AWS', 'Python', 'SQL'], companies: ['TCS', 'Wipro', 'HCL Tech'] },
+        { title: 'UI/UX Designer', salary: '12 - 25 LPA', skills: ['Figma', 'Adobe XD', 'Prototyping'], companies: ['Adobe', 'Apple', 'Uber'] },
+        { title: 'DevOps Architect', salary: '30 - 60 LPA', skills: ['Docker', 'Kubernetes', 'CI/CD'], companies: ['Microsoft', 'Atlassian', 'GitLab'] },
+        { title: 'Cybersecurity Analyst', salary: '15 - 30 LPA', skills: ['Networking', 'PenTesting', 'Security'], companies: ['Cisco', 'Palo Alto', 'CrowdStrike'] },
+        { title: 'Product Manager', salary: '25 - 55 LPA', skills: ['Strategy', 'Agile', 'Product'], companies: ['Paytm', 'PhonePe', 'Razorpay'] }
       ]);
     } finally {
       setIsLoading(false);
